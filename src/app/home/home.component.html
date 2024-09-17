@@ -1,0 +1,24 @@
+{{name}}
+{{State}}
+ <div >
+    <input type="text" [value]="name" class= "form-control"/>
+    <div class="col-3">
+        {{CurrentDate}}
+    </div>
+    <div class="col-3">
+        <input [type]="inputType" [(ngModel)]="name">
+    </div>
+    <select [(ngModel)]="State">
+        <!-- <option *ngFor="let item of list" [value]="item">{{item}}</option> -->
+        <option value="Maha">Maharashtra</option>
+        <option value="Goa">GOA</option>
+        <option value="MP">MP</option>
+    </select>>
+
+    <div class="col-3">
+        <button class="btn btn-success" (click)="greet()">GREETING MESSAGE</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage(name)">SHOW MESSAGE</button>
+    </div>
+ </div>

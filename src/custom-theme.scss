@@ -1,0 +1,121 @@
+// mat.$theme-ignore-duplication-warnings: true;
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$Project-primary-palette1:(
+  50: #162bb066,
+  100: #162bb066,
+  200: #162bb066,
+  300: #162bb066,
+  400: #030404bf,
+  500: #030404bf,
+  600: #030404bf, 
+  700: #030404bf,
+  800: #030404bf,
+  900: #030404bf,
+  contrast: (
+    50: #010e10bf,
+    100: #023232bf,
+    200: #024343bf,
+    300: #162bb066,
+    400: #162bb066,
+    500: #162bb066,
+    600: #162bb066
+  ),
+);
+
+$Project-primary-palette2:(
+  50: #53f5f5,
+  100: #0cecf4bf,
+  200: #06ececed,
+  300: #0fecf0bf,
+  400: #07f4f4bf,
+  500: #0fecf0bf,
+  600: #0fecf08c, 
+  700: #068688bf,
+  800: #0f7a7abf,
+  900: #0f7a7abf,
+  contrast: (
+    50: #010e10bf,
+    100: #023232bf,
+    200: #024343bf,
+    300: #162bb066,
+    400: #162bb066,
+    500: #162bb066,
+    600: #162bb066
+  ),
+);
+
+$mat-theme-primary-palette: map-merge(mat.$cyan-palette, ( contrast: (100: #150c4a,)));
+  $mat-theme-primary: mat.define-palette(
+    $mat-theme-primary-palette,
+    $default: 100,
+    $lighter: 100,
+    $darker: 700,
+    $text: 500
+  );
+
+$Project-typography: mat.define-typography-config($font-family: "Courier New ") ;
+// $Project-primary: mat.define-palette($Project-primary-palette1); 
+// $Project-accent: mat.define-palette($Project-primary-palette1);
+// // The warn palette is optional (defaults to red).
+// $Project-warn: mat.define-palette($Project-primary-palette1);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $Project-theme: mat.define-light-theme((
+//   color: (
+//     primary: $Project-primary,
+//     accent: $Project-accent,
+//     warn: $Project-warn,
+//   ),
+//   typography: $Project-typography,
+//   density: 0
+// ));
+
+
+$dark-primary: mat.define-palette($Project-primary-palette1); 
+$dark-accent: mat.define-palette($Project-primary-palette1); 
+$dark-theme: mat.define-dark-theme(
+  (
+    color:(
+      primary: $dark-primary,
+      accent: $dark-accent,
+    ),
+    typography: $Project-typography,
+  )
+);
+
+$light-primary: mat.define-palette($Project-primary-palette2); 
+$light-accent: mat.define-palette($Project-primary-palette2); 
+$light-theme: mat.define-light-theme(
+  (
+    color:(
+      primary: $light-primary,
+      accent: $light-accent,
+    ),
+    typography: $Project-typography,
+  )
+);
+
+body.light-theme{
+  @include mat.all-component-themes($light-theme);
+}
+body.dark-theme{
+  @include mat.all-component-themes($dark-theme);
+}
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($light-theme);
+.dark-theme{
+  @include mat.all-component-themes($dark-theme);
+}

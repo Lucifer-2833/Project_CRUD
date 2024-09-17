@@ -1,0 +1,122 @@
+
+<!-- <mat-toolbar color="primary" class="mat-elevation-z8">
+    <a><mat-icon>I</mat-icon>MAKTAB</a>
+    <div class="spacer"></div>
+        <a routerLink="home" (click)="changeTab('home')" class="btn"
+            [ngClass]="currentComponent == 'home' ? 'btn btn-info': 'nav-item'">Home</a>
+
+        <a routerLink="aboutus" (click)="changeTab('aboutus')"  class="btn"
+            [ngClass]="currentComponent == 'aboutus' ? 'btn btn-info': 'nav-item'">About uS</a>
+
+        <a routerLink="pricing" (click)="changeTab('pricing')" class='btn' 
+            [ngClass]="currentComponent == 'pricing' ? 'btn btn-info': 'nav-item'">Pricing</a>
+
+        <a routerLink="signin" (click)="changeTab('signin')" class='btn' 
+            [ngClass]="currentComponent == 'signin' ? 'btn btn-info': 'nav-item'">Sign in</a>
+
+        <a mat-raised-button color="warn" routerLink="signup" (click)="changeTab('signup')" class='btn' 
+            [ngClass]="currentComponent == 'signup' ? 'btn btn-info': 'nav-item'">Sign up</a>  
+</mat-toolbar> -->
+
+<!--Main Navigation-->
+<header>
+    <!-- Animated navbar-->
+    <!-- <mat-toolbar color="primary" class="mat-elevation-z8"> -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll" data-mdb-navbar-init>
+        <a ><mat-icon>I</mat-icon>MAKTAB</a>
+      <div class=" spacer">
+        <button
+                class="navbar-toggler ps-0"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+          <span
+                class="d-flex justify-content-start align-items-center"
+                >
+            <i class="fas fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse spacer" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+                <a routerLink="home" (click)="changeTab('home')" class="btn"
+                [ngClass]="currentComponent == 'home' ? 'btn btn-info': 'nav-item'">Home</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="aboutus" (click)="changeTab('aboutus')"  class="btn"
+                [ngClass]="currentComponent == 'aboutus' ? 'btn btn-info': 'nav-item'">About uS</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="pricing" (click)="changeTab('pricing')" class='btn' 
+                [ngClass]="currentComponent == 'pricing' ? 'btn btn-info': 'nav-item'">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="signin" (click)="changeTab('signin')" class='btn' 
+                [ngClass]="currentComponent == 'signin' ? 'btn btn-info': 'nav-item'">Sign in</a>
+            </li>
+            <li class="nav-item">
+                <a mat-raised-button color="warn" routerLink="signup" (click)="changeTab('signup')" class='btn' 
+                [ngClass]="currentComponent == 'signup' ? 'btn btn-info': 'nav-item'">Sign up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Animated navbar -->
+  
+    <!-- Background image -->
+    <div
+       id="intro"
+       class="bg-image"
+       style="
+              background-image: url(quran.png);
+              height: 30vh;
+              "
+       >
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.8)">
+      <div class="container d-flex align-items-center text-center h-100">
+        <div>
+          <h1 class="mb-5"></h1>
+          <p >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+  
+  <div class="container my-2">
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam minima perspiciatis eos tenetur. Praesentium dolores at quos aperiam sed, sint provident consectetur incidunt, nostrum porro earum commodi, ex architecto.</p>
+  
+  </div>
+
+
+<div class="row">
+    <div class="col-12" *ngIf="currentComponent == 'home'">
+        <app-home></app-home>
+    </div>
+    <div class="col-12" *ngIf="currentComponent == 'aboutus'">
+        <app-aboutus></app-aboutus >
+    </div>
+    <div class="col-12" *ngIf="currentComponent == 'signin'">
+        <!-- <app-signin></app-signin> -->
+    </div>
+    <div class="col-12" *ngIf="currentComponent == 'signup'">
+        <!-- <app-signup></app-signup> -->
+    </div>
+    <div class="col-12" *ngIf="currentComponent == 'pricing'">
+        <!-- <app-signin></app-signin> -->
+    </div>
+</div>
+
+
+<!-- <router-outlet>
+    <app-aboutus></app-aboutus> 
+     <app-home></app-home>
+</router-outlet> -->
